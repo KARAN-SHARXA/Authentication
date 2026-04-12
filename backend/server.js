@@ -15,7 +15,8 @@ app.use("/user",userRoute);
 
 // http://localhost:5000/user/register
 
-app.listen(PORT, () => {
-    connectDB()
-    console.log(`Server is running on port ${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on ${PORT}`);
+  });
 });
